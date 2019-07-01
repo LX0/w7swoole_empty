@@ -10,10 +10,6 @@ return [
 			'/home/wwwroot/we7/swoole'
 		]
 	],
-	'crontab' => [
-		'enabled' => false,
-		'interval' => 10,
-	],
 	'reload' => [
 		'interval' => 5, //重复检测的间隔时长
 		'debug' => false, //开启后，将不监控文件变化，重复reload，方便调试
@@ -78,12 +74,5 @@ return [
 				'max' => 20,
 			],
 		]
-	],
-	'process' => [
-		'encrypt' => [
-			'enable' => ienv('PROCESS_ENCRYPT_ENABLE', false),
-			'class' => \W7\App\Process\EncryptProcess::class,
-			'number' => ienv('PROCESS_ENCRYPT_NUMBER', 1),
-		]
-	],
+	]
 ];
