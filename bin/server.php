@@ -10,10 +10,14 @@ require_once dirname(__DIR__) . '/config/define.php';
 require_once BASE_PATH . '/vendor/autoload.php';
 
 
+$script = array_shift($argv);
+$type = array_shift($argv);
+$operate = array_shift($argv);
 $_SERVER['argv'] = array_merge(
 	[
-		array_shift($argv),
-		array_shift($argv) . ':' . array_shift($argv)
+		$script,
+		'server:' . $operate,
+		$type
 	],
 	$argv
 );
